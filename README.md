@@ -14,6 +14,8 @@ password: 'password'
 
 > :warning: Currently this is only working on macOS
 
+Built with Astro Content Collections & Tailwind 🫶🏼
+
 ## Setup
 
 1. `git clone`
