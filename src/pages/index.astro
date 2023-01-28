@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content'
+import { createLink } from '../lib/create-link'
+import Layout from '../layouts/Layout.astro'
+
+const rooms = await getCollection('rooms')
+---
+
+<Layout>
+  <div class="p-10">
+    <h1 class="text-4xl font-black tracking-tight text-rose-500">Zoomies</h1>
+    <p class="mt-1">Click to join.</p>
+    <div class="mt-6 grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-2">
+      {
+        rooms.map((room) => (
+          <a
+            href={createLink(room.data.roomId, room.data.password)}
+            target="_blank"
+            class="rounded-xl bg-slate-700 p-4 font-semibold text-white transition-colors hover:bg-slate-600"
+          >
+            {room.data.title}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
