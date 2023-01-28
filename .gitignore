@@ -2,7 +2,7 @@
 src/config.json
 
 # rooms
-src/content/rooms/*
+src/content/rooms/*.md
 
 # build output
 dist/
